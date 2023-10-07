@@ -980,6 +980,8 @@ class HAT(nn.Module):
             x = self.conv_before_upsample(x)
             x = self.conv_last(self.upsample(x))
 
-        x = x / self.img_range + self.mean
-
+        if x.size(1) == self.mean.size(1):
+            x = x / self.img_range + self.mean
+        else:
+            x = x / self.img_range
         return x
