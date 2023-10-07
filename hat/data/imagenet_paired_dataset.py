@@ -7,7 +7,8 @@ from torchvision.transforms.functional import normalize
 from basicsr.data.data_util import paths_from_lmdb, scandir
 from basicsr.data.transforms import augment, paired_random_crop
 from basicsr.utils import FileClient, imfrombytes, img2tensor
-from basicsr.utils import imresize, rgb2ycbcr
+from basicsr.utils.color_utils import rgb2ycbcr
+from basicsr.utils.matlab_utils import imresize
 from basicsr.utils.registry import DATASET_REGISTRY
 
 
