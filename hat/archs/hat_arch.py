@@ -761,6 +761,7 @@ class HAT(nn.Module):
                  img_range=1.,
                  upsampler='',
                  resi_connection='1conv',
+                 out_chans=3,
                  **kwargs):
         super(HAT, self).__init__()
 
@@ -769,7 +770,7 @@ class HAT(nn.Module):
         self.overlap_ratio = overlap_ratio
 
         num_in_ch = in_chans
-        num_out_ch = in_chans
+        num_out_ch = out_chans
         num_feat = 64
         self.img_range = img_range
         if in_chans == 3:
